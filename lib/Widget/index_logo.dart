@@ -44,7 +44,7 @@ class _IndexLogoPainter extends CustomPainter {
     // 1. GOLDEN CRESCENT ARC
     // =========================================================================
     final Paint crescentGlowPaint = Paint()
-      ..color = goldGlow.withOpacity(0.55)
+      ..color = goldGlow.withValues(alpha: 0.55)
       ..style = PaintingStyle.stroke
       ..strokeWidth = w * 0.075
       ..strokeCap = StrokeCap.round
@@ -76,7 +76,7 @@ class _IndexLogoPainter extends CustomPainter {
       height: h * 0.60,
     );
     final Paint innerCrescentPaint = Paint()
-      ..color = goldColor.withOpacity(0.4)
+      ..color = goldColor.withValues(alpha: 0.4)
       ..style = PaintingStyle.stroke
       ..strokeWidth = w * 0.015;
     canvas.drawArc(innerCrescentRect, startAngle + 0.1, sweepAngle - 0.2, false, innerCrescentPaint);
@@ -85,7 +85,7 @@ class _IndexLogoPainter extends CustomPainter {
     // 2. STYLIZED HAND WITH INDEX FINGER POINTING UP
     // =========================================================================
     final Paint handGlowPaint = Paint()
-      ..color = goldGlow.withOpacity(0.4)
+      ..color = goldGlow.withValues(alpha: 0.4)
       ..style = PaintingStyle.stroke
       ..strokeWidth = w * 0.05
       ..strokeCap = StrokeCap.round
@@ -145,7 +145,7 @@ class _IndexLogoPainter extends CustomPainter {
     knucklePath.moveTo(cx - w * 0.04, cy + h * 0.12);
     knucklePath.quadraticBezierTo(cx + w * 0.02, cy + h * 0.14, cx + w * 0.12, cy + h * 0.10);
     final Paint detailPaint = Paint()
-      ..color = goldColor.withOpacity(0.65)
+      ..color = goldColor.withValues(alpha: 0.65)
       ..style = PaintingStyle.stroke
       ..strokeWidth = w * 0.018;
     canvas.drawPath(knucklePath, detailPaint);
@@ -158,7 +158,7 @@ class _IndexLogoPainter extends CustomPainter {
 
     // Outer cyan bloom
     final Paint bloomPaint = Paint()
-      ..color = cyanGlow.withOpacity(0.6)
+      ..color = cyanGlow.withValues(alpha: 0.6)
       ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 12);
     canvas.drawCircle(flowerCenter, petalRadius * 1.6, bloomPaint);
 

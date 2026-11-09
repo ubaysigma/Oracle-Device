@@ -237,7 +237,7 @@ class _CyanPixelReceiveButtonState extends State<_CyanPixelReceiveButton> {
           decoration: BoxDecoration(
             color: _isHovered ? const Color(0xFF00222B) : Colors.transparent,
             border: Border.all(
-              color: _isHovered ? const Color(0xFF00FFFF) : const Color(0xFF00A8C6).withOpacity(0.6),
+              color: _isHovered ? const Color(0xFF00FFFF) : const Color(0xFF00A8C6).withValues(alpha: 0.6),
               width: 1.2,
             ),
             boxShadow: _isHovered
