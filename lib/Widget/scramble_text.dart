@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../services/audio_service.dart';
 
 /// A widget that reveals text with a cyberpunk / retro terminal scramble decoding effect.
@@ -197,12 +196,13 @@ class ScrambleTextState extends State<ScrambleText>
     final int resolvedCount = (sweepProgress * length).floor();
 
     final TextStyle resolvedStyle = widget.style ??
-        GoogleFonts.vt323(
+        const TextStyle(
+          fontFamily: 'VT323',
           fontSize: 24,
-          color: const Color(0xFF00F0FF),
-          shadows: const [
-            Shadow(color: Color(0xFF00F0FF), blurRadius: 10),
-            Shadow(color: Color(0xFF0099FF), blurRadius: 20),
+          color: Color(0xFF00F0FF),
+          shadows: [
+            Shadow(color: Color(0xFF00F0FF), blurRadius: 8),
+            Shadow(color: Color(0xFF0099FF), blurRadius: 16),
           ],
         );
 

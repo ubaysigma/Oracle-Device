@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'routes.dart';
 
 void main() {
@@ -18,9 +17,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: const Color(0xFF000000),
-        textTheme: GoogleFonts.vt323TextTheme(ThemeData.dark().textTheme).copyWith(
-          bodyLarge: GoogleFonts.vt323(color: const Color(0xFF00F0FF)),
-          bodyMedium: GoogleFonts.vt323(color: const Color(0xFF00E5FF)),
+        textTheme: ThemeData.dark().textTheme.apply(fontFamily: 'VT323').copyWith(
+          bodyLarge: const TextStyle(fontFamily: 'VT323', color: Color(0xFF00F0FF)),
+          bodyMedium: const TextStyle(fontFamily: 'VT323', color: Color(0xFF00E5FF)),
         ),
       ),
       initialRoute: AppRoutes.initial,

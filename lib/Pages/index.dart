@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../Widget/index_logo.dart';
 import '../Widget/scramble_text.dart';
 import '../controller/indexcontroller.dart';
@@ -145,43 +144,45 @@ class _TheCommandState extends State<TheCommand> with WidgetsBindingObserver {
                   key: _scrambleKey,
                   text: _controller.prescriptText.value,
                   textAlign: TextAlign.center,
-                  duration: const Duration(milliseconds: 2200),
+                  duration: const Duration(milliseconds: 1400),
                   onStart: () {
                     _audioService.playScramble();
                   },
                   onComplete: () {
                     _audioService.playResolved();
                   },
-                  // Dominant Glowing Light Blue / Cyan Pixel Font
-                  style: GoogleFonts.vt323(
+                  // Dominant Glowing Light Blue / Cyan Pixel Font (Offline)
+                  style: const TextStyle(
+                    fontFamily: 'VT323',
                     fontSize: 28,
                     height: 1.45,
                     letterSpacing: 1.4,
-                    color: const Color(0xFF00F0FF),
-                    shadows: const [
-                      Shadow(color: Color(0xFF00F0FF), blurRadius: 10),
-                      Shadow(color: Color(0xFF00A2FF), blurRadius: 22),
-                      Shadow(color: Color(0xFF0066FF), blurRadius: 36),
+                    color: Color(0xFF00F0FF),
+                    shadows: [
+                      Shadow(color: Color(0xFF00F0FF), blurRadius: 8),
+                      Shadow(color: Color(0xFF00A2FF), blurRadius: 18),
                     ],
                   ),
-                  scrambleStyle: GoogleFonts.vt323(
+                  scrambleStyle: const TextStyle(
+                    fontFamily: 'VT323',
                     fontSize: 28,
                     height: 1.45,
                     letterSpacing: 1.4,
-                    color: const Color(0xFF087C8F),
-                    shadows: const [
-                      Shadow(color: Color(0xFF054550), blurRadius: 8),
+                    color: Color(0xFF087C8F),
+                    shadows: [
+                      Shadow(color: Color(0xFF054550), blurRadius: 4),
                     ],
                   ),
-                  frontierStyle: GoogleFonts.vt323(
+                  frontierStyle: const TextStyle(
+                    fontFamily: 'VT323',
                     fontSize: 29,
                     height: 1.45,
                     letterSpacing: 1.4,
-                    color: const Color(0xFFE6FFFF),
+                    color: Color(0xFFE6FFFF),
                     fontWeight: FontWeight.bold,
-                    shadows: const [
-                      Shadow(color: Color(0xFFFFFFFF), blurRadius: 12),
-                      Shadow(color: Color(0xFF00F0FF), blurRadius: 26),
+                    shadows: [
+                      Shadow(color: Color(0xFFFFFFFF), blurRadius: 8),
+                      Shadow(color: Color(0xFF00F0FF), blurRadius: 16),
                     ],
                   ),
                 ),
@@ -190,17 +191,18 @@ class _TheCommandState extends State<TheCommand> with WidgetsBindingObserver {
           ),
           const SizedBox(height: 24),
 
-          // Mandatory Execution tag in glowing cyan pixel font
-          Text(
+          // Mandatory Execution tag in glowing cyan pixel font (Offline)
+          const Text(
             'EXECUTION IS MANDATORY.',
             textAlign: TextAlign.center,
-            style: GoogleFonts.silkscreen(
+            style: TextStyle(
+              fontFamily: 'Silkscreen',
               fontSize: 11,
               letterSpacing: 3.5,
-              color: const Color(0xFF00D2EA),
-              shadows: const [
-                Shadow(color: Color(0xFF00D2EA), blurRadius: 8),
-                Shadow(color: Color(0xFF0088FF), blurRadius: 16),
+              color: Color(0xFF00D2EA),
+              shadows: [
+                Shadow(color: Color(0xFF00D2EA), blurRadius: 6),
+                Shadow(color: Color(0xFF0088FF), blurRadius: 12),
               ],
             ),
           ),
@@ -253,14 +255,15 @@ class _CyanPixelReceiveButtonState extends State<_CyanPixelReceiveButton> {
           child: Text(
             '- CLICK TO RECEIVE -',
             textAlign: TextAlign.center,
-            style: GoogleFonts.silkscreen(
+            style: TextStyle(
+              fontFamily: 'Silkscreen',
               fontSize: 13,
               letterSpacing: _isHovered ? 2.8 : 2.0,
               color: _isHovered ? const Color(0xFFE0FFFF) : const Color(0xFF00F0FF),
               fontWeight: FontWeight.bold,
               shadows: const [
-                Shadow(color: Color(0xFF00F0FF), blurRadius: 10),
-                Shadow(color: Color(0xFF0088FF), blurRadius: 20),
+                Shadow(color: Color(0xFF00F0FF), blurRadius: 8),
+                Shadow(color: Color(0xFF0088FF), blurRadius: 16),
               ],
             ),
           ),
